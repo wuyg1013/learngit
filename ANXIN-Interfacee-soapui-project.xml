@@ -1,0 +1,946 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="2f8078fe-e0cb-4cdd-bb4c-82aa3cefe426" activeEnvironment="Default" name="ANXIN_Interfacee" resourceRoot="" soapui-version="5.1.2" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="d2c9075d-039e-40ad-9804-9ff279eec7a3" wsaVersion="NONE" name="SoapServiceSoapBinding" type="wsdl" bindingName="{http://soap.szkingdom.com/}SoapServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://10.2.0.149:51080/services/SoapService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://10.2.0.149:51080/services/SoapService?wsdl"><con:part><con:url>http://10.2.0.149:51080/services/SoapService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="SoapService" targetNamespace="http://soap.szkingdom.com/" xmlns:ns1="http://cxf.apache.org/bindings/xformat" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soap.szkingdom.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://soap.szkingdom.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="doService" type="tns:doService"/>
+      <xs:element name="doServiceResponse" type="tns:doServiceResponse"/>
+      <xs:complexType name="doService">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="requestXml" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="doServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="doServiceResponse">
+    <wsdl:part element="tns:doServiceResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doService">
+    <wsdl:part element="tns:doService" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ISoapService">
+    <wsdl:operation name="doService">
+      <wsdl:input message="tns:doService" name="doService"></wsdl:input>
+      <wsdl:output message="tns:doServiceResponse" name="doServiceResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SoapServiceSoapBinding" type="tns:ISoapService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="doService">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="doService">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="doServiceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SoapService">
+    <wsdl:port binding="tns:SoapServiceSoapBinding" name="SoapServiceHttpPort">
+      <soap:address location="http://10.2.0.149:51080/services/SoapService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://10.2.0.149:51080/services/SoapService</con:endpoint></con:endpoints><con:operation id="72a6ccb4-ce7c-47c2-817a-51f916bc6777" isOneWay="false" action="" name="doService" bindingOperationName="doService" type="Request-Response" outputName="doServiceResponse" inputName="doService" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="694b64de-bf53-43ec-abe1-4b5ed2ef7f38" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.2.0.149:51080/services/SoapService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://soap.szkingdom.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soap:doService>
+         <!--Optional:-->
+         <requestXml>?</requestXml>
+      </soap:doService>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soap.szkingdom.com/ISoapService/doService"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="4801bb4d-ffd2-481c-8455-ed6d51134ecc" wsaVersion="NONE" name="XMLFileServiceHttpBinding" type="wsdl" bindingName="{xmlservice}XMLFileServiceHttpBinding" soapVersion="1_1" anonymous="optional" definition="http://10.2.0.149:51080/xservices/XMLFileService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://10.2.0.149:51080/xservices/XMLFileService?wsdl"><con:part><con:url>http://10.2.0.149:51080/xservices/XMLFileService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="xmlservice" xmlns:soapenc12="http://www.w3.org/2003/05/soap-encoding" xmlns:tns="xmlservice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap11="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc11="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="xmlservice">
+      <xsd:element name="XMLFileService">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="XMLFileServiceResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="XMLFileServiceResponse">
+    <wsdl:part name="parameters" element="tns:XMLFileServiceResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="XMLFileServiceRequest">
+    <wsdl:part name="parameters" element="tns:XMLFileService"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="XMLFileServicePortType">
+    <wsdl:operation name="XMLFileService">
+      <wsdl:input name="XMLFileServiceRequest" message="tns:XMLFileServiceRequest"></wsdl:input>
+      <wsdl:output name="XMLFileServiceResponse" message="tns:XMLFileServiceResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="XMLFileServiceHttpBinding" type="tns:XMLFileServicePortType">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="XMLFileService">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="XMLFileServiceRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="XMLFileServiceResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="XMLFileService">
+    <wsdl:port name="XMLFileServiceHttpPort" binding="tns:XMLFileServiceHttpBinding">
+      <wsdlsoap:address location="http://10.2.0.149:51080/xservices/XMLFileService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://10.2.0.149:51080/xservices/XMLFileService</con:endpoint></con:endpoints><con:operation id="524f7f43-4046-4275-9447-8d0c2dccf9ea" isOneWay="false" action="" name="XMLFileService" bindingOperationName="XMLFileService" type="Request-Response" outputName="XMLFileServiceResponse" inputName="XMLFileServiceRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="96bdb72c-9551-4000-99ae-a780c379181b" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.2.0.149:51080/xservices/XMLFileService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="xmlservice">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <xs:XMLFileService>
+         <xs:in0>?</xs:in0>
+      </xs:XMLFileService>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="xmlservice/XMLFileServicePortType/XMLFileServiceRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="02b986cf-7e4c-480e-abdc-22794a7e3f51" name="710007"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="f7873dcd-7cc1-49ac-bc2b-1083f4656b2d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="公募基金查询" searchProperties="true"><con:settings/><con:testStep type="request" name="doService" id="e93bd7d8-b5e2-4d0d-83f2-abdbdf61a7ce"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapServiceSoapBinding</con:interface><con:operation>doService</con:operation><con:request name="doService" id="ed6ca9ef-adfb-4863-8efb-08f5deebb569"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.80.1.211:8088</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://soap.szkingdom.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soap:doService>
+         <!--Optional:-->
+         <requestXml>?</requestXml>
+      </soap:doService>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="Invalid HTTP Status Codes" id="2b1649ed-e9e6-4e59-a43b-c71818fae91f" name="Invalid HTTP Status Codes"><con:configuration><codes>"MSG_CODE": "0"</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="Test Request" id="e781ce40-c451-4159-9173-7b1ab3661c91"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapServiceSoapBinding</con:interface><con:operation>doService</con:operation><con:request name="Test Request" id="7743472f-4baf-4e00-b83d-ab3047b15afe"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8090/services/SoapService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://soap.szkingdom.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soap:doService/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="4055cbf1-b481-41d1-b0e0-c092be053d1b"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:loadTest id="a1f2adb1-cdfd-4c4d-9d2d-e0639cd8aee8" name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>1000</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>10</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval><con:reportParameters/></con:loadTest><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:testSuite id="b90b027d-99f2-4260-bfa7-e52ad9a125b9" name="710023"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="c835f9ea-447e-4b87-8c05-b37a96b75355" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="产品费率查询" searchProperties="true"><con:settings/><con:testStep type="request" name="doService" id="d2518ae3-78c4-45ce-b605-92dd25ad4b93"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapServiceSoapBinding</con:interface><con:operation>doService</con:operation><con:request name="doService" id="c3a0cf39-c2c6-4146-8a40-ee4a64f0ccd2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:57091/services/SoapService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://soap.szkingdom.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soap:doService>
+         <!--Optional:-->
+         
+<requestXml>
+
+{
+	"REQUESTS": [{
+		"REQ_COMM_DATA": {
+			"service": "P6506002",
+			"oprFlag": "-3",
+			"funId":"710002"
+		}
+	}]
+}
+
+</requestXml>
+      </soap:doService>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="39b0ca5d-a712-456d-acf4-33d214b939d6"/><con:assertion type="Schema Compliance" id="c7b130bf-dd85-41cd-b2fd-a9410ddd7d61"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion" id="f40cee9e-a9c9-4d82-a9a8-426f030d3cd0"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:testSuite id="00b797d9-8c7b-4844-b18e-66ba44703d18" name="710021"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="1407c4cf-f626-4ded-aee8-c9004ad29390" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="产品公告查询" searchProperties="true"><con:settings/><con:testStep type="request" id="5a7c112a-0380-4266-baef-f6b5872eb700" name="doService"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapServiceSoapBinding</con:interface><con:operation>doService</con:operation><con:request name="doService" id="c783e3e7-798a-42fb-adfd-7bd3ccaf1fb3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.2.0.151:51080/pif3_ws/services/SoapService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://soap.szkingdom.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soap:doService>
+         <!--Optional:-->
+         
+         <requestXml>
+   
+{
+	"REQUESTS": [{
+		"REQ_COMM_DATA": {
+			"service": "710005",
+			 "CUST_CODE":"guest",
+                "GRANT_KEY":"f936e1520d6a6856561462e05308874a",
+                "CUR_PAGE":"2"
+		}
+	}]
+}
+
+</requestXml>
+
+         
+      </soap:doService>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="Simple Contains" id="530fe901-7614-452a-82d9-f85fb6aa2fd1" name="msg_code"><con:configuration><token>"MSG_CODE":"0"</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://soap.szkingdom.com/ISoapService/doService" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:testSuite id="47f08c77-1c80-4f9f-83b9-5a341198b57d" name="65050001"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="e1f202b8-2008-41d7-9788-bb5e38f6590d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="查询产品基本信息" searchProperties="true"><con:settings/><con:testStep type="request" name="Test Request" id="12ee3f0a-f730-4140-92ea-c5ea23b79bff"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapServiceSoapBinding</con:interface><con:operation>doService</con:operation><con:request name="Test Request" id="da95c2b8-af1f-4640-b234-6263e1d90649"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.2.0.151:51080/xservices/XMLFileService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://soap.szkingdom.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soap:doService>
+         <!--Optional:-->
+         
+<requestXml>
+
+{
+    "REQUESTS": [
+        {
+            "REQ_COMM_DATA": {
+                "service": "65050002",
+                "CUST_CODE":"SPS",
+                "GRANT_KEY":"5a733cfaebedc26ee66149fbdf376ab8",
+                "PRO_TYPE":"2"
+                }
+        }
+    ]
+}
+
+</requestXml>
+
+         
+      </soap:doService>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="8a25de94-d246-4ad8-b7b4-d7dbbda3515e"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:testSuite id="bb5b330d-7aa3-491d-9a8d-0b367fb6f651" name="65050002"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="427bccc0-ea03-4a95-9a83-f6d2793e957e" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="查询单个产品基本信息" searchProperties="true"><con:settings/><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:testSuite id="5ed5fa8c-3f08-40c2-b53c-482ab4af453c" name="65050005"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="248d94cf-c2ae-485f-b749-0add5202a5fe" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="资讯产品内容录入" searchProperties="true"><con:settings/><con:testStep type="request" name="Test Request" id="bdc09072-0f3d-433f-a92d-1b31df9d9f25"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>XMLFileServiceHttpBinding</con:interface><con:operation>XMLFileService</con:operation><con:request name="Test Request" id="c32d64a5-9483-40a3-85b2-18e4e34f72fd"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.2.0.151:51080/xservices/XMLFileService?wsdl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="xmlservice">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <xs:XMLFileService>
+         <xs:in0><![CDATA[
+          
+<?xml version="1.0" encoding="GBK"?> 
+<listbex> 
+  <bex funcId='710505'> 
+    <sup_id>422264</sup_id> 
+     <goods_id>ZB013</goods_id> 
+     <info_id>2018071210</info_id> 
+     <sup_licensekey></sup_licensekey> 
+     <info_name></info_name> 
+     <info_type>1</info_type> 
+     <info_date></info_date> 
+     <info_title></info_title> 
+     <rel_industry></rel_industry> 
+     <rel_market></rel_market> 
+     <rel_stock></rel_stock> 
+     <rel_stock_name></rel_stock_name> 
+     <info_cont>aaawerwerwer</info_cont>
+     <ann_cont>aaawerwerwer</ann_cont>
+  </bex> 
+</listbex>
+ 
+     
+         ]]]]>><![CDATA[</xs:in0>
+      </xs:XMLFileService>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="d2dd8d59-d8c8-40c6-9b80-9ae92a7cddc8"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:testSuite id="90267f4a-dd2f-4127-9588-1d6fdd451062" name="65050003"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="443a5ee8-7753-4b0c-83cc-831c950245d0" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="资讯产品内容查询" searchProperties="true"><con:settings/><con:testStep type="request" name="Test Request" id="e7794010-01e9-4982-ab96-7721fb85460d"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>XMLFileServiceHttpBinding</con:interface><con:operation>XMLFileService</con:operation><con:request name="Test Request" id="3ab285e5-6e50-4184-8921-515ab50ecfe2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.2.0.149:51080/xservices/XMLFileService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="xmlservice">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <xs:XMLFileService>
+         <xs:in0><![CDATA[
+         
+         
+         
+<?xml version="1.0" encoding="GBK"?> 
+<listbex> 
+  <bex funcId='65050003'> 
+     <pro_id>2373</pro_id> 
+     <pro_code>YJ0004</pro_code> 
+     <sno>1643</sno> 
+     <sup_id>422264</sup_id> 
+     <sup_code>AXZB</sup_code> 
+     <sup_name>安信证券总部</sup_name> 
+     <goods_id>YJ0004</goods_id> 
+     <info_id>905436</info_id> 
+     <info_name>2</info_name> 
+     <info_date_start>20171208</info_date_start> 
+     <info_date_end>20171213</info_date_end> 
+     <info_title>ddasdqewqa</info_title> 
+     <currentpage>1</currentpage> 
+     <pagecount>100</pagecount> 
+  </bex> 
+</listbex>
+
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         ]]]]>><![CDATA[</xs:in0>
+      </xs:XMLFileService>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="c95bc8ad-974c-408c-9ab2-a7b1212362c1"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:testSuite id="2530116d-fbb5-4031-8cde-fd8c716dc015" name="65050004"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="6859247d-1d51-4d48-a6fc-1eb8d2bef594" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="资讯产品对应关系查询" searchProperties="true"><con:settings/><con:testStep type="request" name="Test Request" id="a02635ba-8662-4621-ad84-0e0c8e0e2a05"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>XMLFileServiceHttpBinding</con:interface><con:operation>XMLFileService</con:operation><con:request name="Test Request" id="69eec437-a27c-4109-9dab-56ab104967fa"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.2.0.149:51080/xservices/XMLFileService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="xmlservice">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <xs:XMLFileService>
+         <xs:in0><![CDATA[
+         
+         
+
+
+
+         
+<?xml version="1.0" encoding="GBK"?> 
+<listbex> 
+  <bex funcId='65050012'> 
+     <mode></mode> 
+     <start_date></start_date> 
+     <sup_code></sup_code> 
+     <pro_type></pro_type> 
+     <mgr_stat></mgr_stat> 
+     <man_way></man_way> 
+     <pro_comm_ext_sql></pro_comm_ext_sql> 
+     <order_type></order_type> 
+     <pro_id_sql></pro_id_sql> 
+     <currentpage>1</currentpage> 
+     <pagecount>1000</pagecount> 
+  </bex> 
+</listbex>    
+
+    
+         
+         
+         
+         ]]]]>><![CDATA[</xs:in0>
+      </xs:XMLFileService>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="cb4eb671-c63e-46b6-ad36-5bdbce29c2d6"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:testSuite id="beaa85f6-3266-4c24-ba3e-b6a3b622255d" name="65050007"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="3fcc5aa8-2443-4ef1-bd91-fbe109020284" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="评价方案与指标查询（金融类）" searchProperties="true"><con:settings/><con:testStep type="request" name="Test Request" id="37061fc5-4f19-40f2-b4d4-99502ac53734"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapServiceSoapBinding</con:interface><con:operation>doService</con:operation><con:request name="Test Request" id="da5b51f6-f781-44dc-8116-eff1d45df474"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.2.0.149:51080/xservices/XMLFileService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="xmlservice">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <xs:XMLFileService>
+         <xs:in0><![CDATA[
+			<?xml version="1.0" encoding="GBK"?> 
+			<listbex> 
+			  <bex funcId='65050007'> 
+			     <PRO_TYPE>4</PRO_TYPE>
+			     <PRO_ID>10043</PRO_ID>
+			     <PLAN_USER>2</PLAN_USER>
+			     <OPER_FLAG>kpi</OPER_FLAG>
+			     <CURRENTPAGE>1</CURRENTPAGE>
+			     <PAGECOUNT>100</PAGECOUNT>
+			  </bex> 
+		</listbex>
+         ]]]]>><![CDATA[</xs:in0>
+      </xs:XMLFileService>
+   <soap:doService xmlns:soap="http://soap.szkingdom.com/"/></soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="15778b32-45dd-4777-8fb5-158f1157b334"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/><con:breakPoints><con:testStepId>37061fc5-4f19-40f2-b4d4-99502ac53734</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase><con:testCase id="84fbf274-c97d-433b-aee5-97f88509d13d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="评价方案与打标查询（资讯类）" searchProperties="true"><con:settings/><con:testStep type="request" name="Test Request" id="3e3b62a2-968d-4802-96d1-50314bee5d6a"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapServiceSoapBinding</con:interface><con:operation>doService</con:operation><con:request name="Test Request" id="4d838b63-32ce-4410-ad35-bff4e7c1cc8b"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.2.0.149:51080/xservices/XMLFileService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="xmlservice">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <xs:XMLFileService>
+         <xs:in0><![CDATA[
+			<?xml version="1.0" encoding="GBK"?> 
+			<listbex> 
+			  <bex funcId='65050007'> 
+			     <PRO_TYPE>60</PRO_TYPE>
+			     <PRO_ID>10291</PRO_ID>
+			     <PLAN_USER>2</PLAN_USER>
+			     <OPER_FLAG>kpi</OPER_FLAG>
+			     <CURRENTPAGE>1</CURRENTPAGE>
+			     <PAGECOUNT>100</PAGECOUNT>
+			  </bex> 
+		</listbex>
+         ]]]]>><![CDATA[</xs:in0>
+      </xs:XMLFileService>
+   <soap:doService xmlns:soap="http://soap.szkingdom.com/"/></soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="e17d9f32-49ef-461e-b8f1-69acb2c72af4"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:testSuite id="5fe0961c-00c3-45e7-b4e4-dd4af8fcfa8d" name="65050008"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="ec3f3f07-08c0-4598-8e86-28affc957670" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="产品评价信息新增(金融类1)" searchProperties="true"><con:settings/><con:testStep type="request" name="Test Request" id="5a10d387-1e56-4411-8b0c-f499b8b929b8"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapServiceSoapBinding</con:interface><con:operation>doService</con:operation><con:request name="Test Request" id="603adcce-f0fd-4d45-9666-a0633ec0f3f9"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.2.0.149:51080/xservices/XMLFileService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="xmlservice">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <xs:XMLFileService>
+         <xs:in0><![CDATA[        
+<?xml version="1.0" encoding="GBK"?> 
+<listbex> 
+	<bex funcId='65050008'>
+		<PRO_ID>10043</PRO_ID>
+		<OBJ_TYPE>2</OBJ_TYPE>
+		<OBJ_ID>13423432345</OBJ_ID>
+		<OBJ_NAME>test</OBJ_NAME>
+		<EVA_TITLE>这个产品不错</EVA_TITLE>
+		<EVA_CONTENT>内容不能涉及广告、比价、重复反馈、不实评论</EVA_CONTENT>
+		<EVA_SCRIPT>425:0|422:40|427:60|426:80</EVA_SCRIPT>
+		<PLAN_ID>5</PLAN_ID>
+	</bex> 
+</listbex>
+         ]]]]>><![CDATA[</xs:in0>
+      </xs:XMLFileService>
+   <soap:doService xmlns:soap="http://soap.szkingdom.com/"/></soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="9c1fb922-d1b1-49fe-b60a-6282eed7c853"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="a933bd05-1645-45b7-bf14-106e07d3831b" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="产品评价信息新增(资讯类1)" searchProperties="true"><con:settings/><con:testStep type="request" name="Test Request" id="11e6a8cd-3f92-426f-b14f-67ef6f2abeac"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapServiceSoapBinding</con:interface><con:operation>doService</con:operation><con:request name="Test Request" id="6c486764-4ab0-4784-bb90-b0c6b1e0e51a"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.2.0.149:51080/xservices/XMLFileService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="xmlservice">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <xs:XMLFileService>
+         <xs:in0><![CDATA[        
+<?xml version="1.0" encoding="GBK"?> 
+<listbex> 
+	<bex funcId='65050008'>
+		<PRO_ID>10291</PRO_ID>
+		<OBJ_TYPE>2</OBJ_TYPE>
+		<OBJ_ID>13423432345</OBJ_ID>
+		<OBJ_NAME>test1</OBJ_NAME>
+		<EVA_TITLE>这个产品不错</EVA_TITLE>
+		<EVA_CONTENT>内容不能涉及广告、比价、重复反馈、不实评论s</EVA_CONTENT>
+		<EVA_SCRIPT>425:0|422:40|427:60|426:80</EVA_SCRIPT>
+		<PLAN_ID>2</PLAN_ID>
+	</bex> 
+</listbex>
+         ]]]]>><![CDATA[</xs:in0>
+      </xs:XMLFileService>
+   <soap:doService xmlns:soap="http://soap.szkingdom.com/"/></soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="d0c38053-5613-462e-b873-2b57eb0e3327"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="72c8835a-4317-44cf-8223-1e552b94d43c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="产品评价信息新增(金融类2)" searchProperties="true"><con:settings/><con:testStep type="request" name="Test Request" id="c42f5071-ea55-4ac8-8a3e-f792b95bdfc9"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapServiceSoapBinding</con:interface><con:operation>doService</con:operation><con:request name="Test Request" id="d742d3d1-fac5-40eb-93a8-a250747de521"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.2.0.149:51080/xservices/XMLFileService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="xmlservice">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <xs:XMLFileService>
+         <xs:in0><![CDATA[        
+<?xml version="1.0" encoding="GBK"?> 
+<listbex> 
+	<bex funcId='65050008'>
+		<PRO_ID>10043</PRO_ID>
+		<OBJ_TYPE>2</OBJ_TYPE>
+		<OBJ_ID>13455556666</OBJ_ID>
+		<OBJ_NAME>test1</OBJ_NAME>
+		<EVA_TITLE>还可以，还可以</EVA_TITLE>
+		<EVA_CONTENT>内容不能涉及广告、内容不能涉及广告、内容不能涉及广告</EVA_CONTENT>
+		<EVA_SCRIPT>425:0|422:60|427:40|426:100</EVA_SCRIPT>
+		<PLAN_ID>5</PLAN_ID>
+	</bex> 
+</listbex>
+         ]]]]>><![CDATA[</xs:in0>
+      </xs:XMLFileService>
+   <soap:doService xmlns:soap="http://soap.szkingdom.com/"/></soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="2451efa4-e920-4ea7-af9d-5442925a60fc"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="b187c2a6-a98b-4b7e-8426-ffaf76711dd9" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="产品评价信息新增(资讯类2)" searchProperties="true"><con:settings/><con:testStep type="request" name="Test Request" id="f240fb33-c150-4bbe-9e32-5bddcade7822"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapServiceSoapBinding</con:interface><con:operation>doService</con:operation><con:request name="Test Request" id="3ac444cb-09e7-469a-859d-c8557a9f0149"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.2.0.149:51080/xservices/XMLFileService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="xmlservice">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <xs:XMLFileService>
+         <xs:in0><![CDATA[        
+<?xml version="1.0" encoding="GBK"?> 
+<listbex> 
+	<bex funcId='65050008'>
+		<PRO_ID>10291</PRO_ID>
+		<OBJ_TYPE>2</OBJ_TYPE>
+		<OBJ_ID>13822334455</OBJ_ID>
+		<OBJ_NAME>test</OBJ_NAME>
+		<EVA_TITLE>这春遥有符合</EVA_TITLE>
+		<EVA_CONTENT>重复反馈、重复反馈、重复反馈</EVA_CONTENT>
+		<EVA_SCRIPT>425:0|422:80|427:20|426:60</EVA_SCRIPT>
+		<PLAN_ID>2</PLAN_ID>
+	</bex> 
+</listbex>
+         ]]]]>><![CDATA[</xs:in0>
+      </xs:XMLFileService>
+   <soap:doService xmlns:soap="http://soap.szkingdom.com/"/></soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="4ea8d48b-4a63-4518-beea-1eef93896dc1"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:testSuite id="1db6db58-625f-43ad-8c2b-9c6c737d3c1a" name="65050009"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="d91538aa-3f17-4939-adcf-cc514604ecf6" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="产品评价信息查询（资讯类）" searchProperties="true"><con:settings/><con:testStep type="request" name="Test Request" id="d1fc98ec-4e3c-4b99-965f-7245fba8b6ad"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapServiceSoapBinding</con:interface><con:operation>doService</con:operation><con:request name="Test Request" id="6a964650-387c-4aba-9778-c7dfbfc27e59"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.2.0.149:51080/xservices/XMLFileService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="xmlservice">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<xs:XMLFileService>
+			<xs:in0><![CDATA[
+				        
+<?xml version="1.0" encoding="GBK"?> 
+<listbex> 
+  <bex funcId='65050009'>
+     <PRO_ID>10291</PRO_ID>
+     <OBJ_TYPE>2</OBJ_TYPE>
+     <PRO_CODE>ZX0203</PRO_CODE>
+     <SHT_NAME>远大天玑资讯</SHT_NAME>
+     <EVA_TYPE></EVA_TYPE>
+     <EVA_DATE_BGN></EVA_DATE_BGN>
+     <EVA_DATE_END></EVA_DATE_END>
+     <CURRENTPAGE>1</CURRENTPAGE>
+     <PAGECOUNT>2</PAGECOUNT>
+  </bex> 
+</listbex>
+         
+			]]]]>><![CDATA[</xs:in0>
+		</xs:XMLFileService>
+		<soap:doService xmlns:soap="http://soap.szkingdom.com/"/>
+	</soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="094a8188-83fd-4079-af8c-0ef2c2617ae4"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="6f1df416-701e-4abf-bedd-b4eabe31047e" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="产品评价信息查询（金融类）" searchProperties="true"><con:settings/><con:testStep type="request" name="Test Request" id="0c0bf784-ff7b-4c9c-9f9b-d6a1a4f4d431"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapServiceSoapBinding</con:interface><con:operation>doService</con:operation><con:request name="Test Request" id="e2599b95-c3db-4108-b4dd-108612c5e81e"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.2.0.149:51080/xservices/XMLFileService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="xmlservice">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<xs:XMLFileService>
+			<xs:in0><![CDATA[
+				        
+<?xml version="1.0" encoding="GBK"?> 
+<listbex> 
+  <bex funcId='65050009'>
+     <PRO_ID>10043</PRO_ID>
+     <OBJ_TYPE>2</OBJ_TYPE>
+     <PRO_CODE>AD7X25</PRO_CODE>
+     <SHT_NAME>安盈宝X期25号</SHT_NAME>
+     <EVA_TYPE></EVA_TYPE>
+     <EVA_DATE_BGN></EVA_DATE_BGN>
+     <EVA_DATE_END></EVA_DATE_END>
+     <CURRENTPAGE>1</CURRENTPAGE>
+     <PAGECOUNT>2</PAGECOUNT>
+  </bex> 
+</listbex>
+         
+			]]]]>><![CDATA[</xs:in0>
+		</xs:XMLFileService>
+		<soap:doService xmlns:soap="http://soap.szkingdom.com/"/>
+	</soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="ad330dac-923e-45a9-9d96-6ee10fe8048d"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:testSuite id="02333b4d-ab56-430f-b2df-349ea9cce59f" name="65050010"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="f6c7d120-2206-4eb7-8788-240444c50687" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="产品评价内容回复（资讯类）" searchProperties="true"><con:settings/><con:testStep type="request" name="Test Request" id="df986ed7-6125-4103-98e1-9c1d67f63a1c"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapServiceSoapBinding</con:interface><con:operation>doService</con:operation><con:request name="Test Request" id="699cf52a-a616-4597-9dd0-4e0934130208"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.2.0.151:51080/xservices/XMLFileService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="xmlservice">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<xs:XMLFileService>
+			<xs:in0><![CDATA[
+				        
+<?xml version="1.0" encoding="GBK"?> 
+<listbex> 
+  <bex funcId='65050010'>
+     <EVA_ID>2323</EVA_ID>
+     <REPLY_CONTENT>123456</REPLY_CONTENT>
+     <OBJ_TYPE>2</OBJ_TYPE>
+     <OBJ_ID>13822334455</OBJ_ID>
+     <OBJ_NAME>test</OBJ_NAME>
+  </bex> 
+</listbex>
+         
+			]]]]>><![CDATA[</xs:in0>
+		</xs:XMLFileService>
+		<soap:doService xmlns:soap="http://soap.szkingdom.com/"/>
+	</soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="9f8b442e-a956-4788-a9ae-3f9dbc22407d"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="ae17c2e0-40ab-4c78-8b01-e84ca294cd57" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="产品评价内容回复（金融类）" searchProperties="true"><con:settings/><con:testStep type="request" name="Test Request" id="0465d1bd-6199-488a-8e7f-042115cdee93"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapServiceSoapBinding</con:interface><con:operation>doService</con:operation><con:request name="Test Request" id="f3503a9d-dcba-40e2-ae7f-c1486f520cdc"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.2.0.149:51080/xservices/XMLFileService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="xmlservice">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<xs:XMLFileService>
+			<xs:in0><![CDATA[
+				        
+<?xml version="1.0" encoding="GBK"?> 
+<listbex> 
+  <bex funcId='65050010'>
+     <EVA_ID>2322</EVA_ID>
+     <REPLY_CONTENT>22334455</REPLY_CONTENT>
+     <OBJ_TYPE>2</OBJ_TYPE>
+     <OBJ_ID>13455556666</OBJ_ID>
+     <OBJ_NAME>test1</OBJ_NAME>
+  </bex> 
+</listbex>
+         
+			]]]]>><![CDATA[</xs:in0>
+		</xs:XMLFileService>
+		<soap:doService xmlns:soap="http://soap.szkingdom.com/"/>
+	</soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="55495244-e5f3-4f87-bf88-8b529fa523a7"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:testSuite id="8b476036-ef93-4d2a-a3c6-c0c0147f172f" name="65050011"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="75b56c13-ae1a-4a40-9965-54585ad72ecb" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="产品评价价值反馈（金融类-无用）" searchProperties="true"><con:settings/><con:testStep type="request" name="Test Request" id="f79b5888-1d0c-4098-aa6f-2dbf9ba71614"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapServiceSoapBinding</con:interface><con:operation>doService</con:operation><con:request name="Test Request" id="43fcdfe3-6049-4fcc-9735-8f1fcf1a26b4"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.2.0.151:51080/xservices/XMLFileService</con:endpoint><con:request><![CDATA[
+				
+				        
+<?xml version="1.0" encoding="GBK"?> 
+<listbex> 
+  <bex funcId='65050011'>
+     <EVA_ID>2322</EVA_ID>
+     <OBJ_TYPE>2</OBJ_TYPE>
+     <OBJ_ID>13455556666</OBJ_ID>
+     <IS_WORTH>0</IS_WORTH>
+  </bex> 
+</listbex>
+
+         
+			
+		]]></con:request><con:assertion type="SOAP Response" id="f057d911-35d0-4e2e-9395-f1b6532ea93f"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="7190325c-4c25-4f47-a7a1-eb967e12650c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="产品评价价值反馈（金融类-有用）" searchProperties="true"><con:settings/><con:testStep type="request" name="Test Request" id="c5db471f-8848-45f2-a7ea-bdd06d7c297c"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapServiceSoapBinding</con:interface><con:operation>doService</con:operation><con:request name="Test Request" id="eea9ca69-27c9-46b7-afb8-6e24d9eb4ea5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.2.0.149:51080/xservices/XMLFileService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="xmlservice">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<xs:XMLFileService>
+			<xs:in0>
+				<![CDATA[
+				        
+<?xml version="1.0" encoding="GBK"?> 
+<listbex> 
+  <bex funcId='65050011'>
+     <EVA_ID>2302</EVA_ID>
+     <OBJ_TYPE>2</OBJ_TYPE>
+     <OBJ_ID>13423432345</OBJ_ID>
+     <IS_WORTH>1</IS_WORTH>
+  </bex> 
+</listbex>
+
+         
+			]]]]>><![CDATA[
+			</xs:in0>
+		</xs:XMLFileService>
+		<soap:doService xmlns:soap="http://soap.szkingdom.com/"/>
+	</soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="a81e122e-aadb-464b-b2d1-f2e45ffea6c2"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="f0317664-4a00-478c-b967-0e3671964e60" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="产品评价价值反馈（资讯类-无用）" searchProperties="true"><con:settings/><con:testStep type="request" name="Test Request" id="73952e53-84e0-4a7a-af57-29fff4074dca"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapServiceSoapBinding</con:interface><con:operation>doService</con:operation><con:request name="Test Request" id="bc4276e7-a39c-4394-af48-c1aed95d8263"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.2.0.149:51080/xservices/XMLFileService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="xmlservice">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<xs:XMLFileService>
+			<xs:in0>
+				<![CDATA[
+				        
+<?xml version="1.0" encoding="GBK"?> 
+<listbex> 
+  <bex funcId='65050011'>
+     <EVA_ID>2323</EVA_ID>
+     <OBJ_TYPE>2</OBJ_TYPE>
+     <OBJ_ID>13822334455</OBJ_ID>
+     <IS_WORTH>0</IS_WORTH>
+  </bex> 
+</listbex>
+
+         
+			]]]]>><![CDATA[
+			</xs:in0>
+		</xs:XMLFileService>
+		<soap:doService xmlns:soap="http://soap.szkingdom.com/"/>
+	</soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="1089fbd4-ebb5-4337-9bfe-d2ae5f068095"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="f25c6624-26f7-471c-be3f-2f4fb273fb04" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="产品评价价值反馈（资讯类-有用）" searchProperties="true"><con:settings/><con:testStep type="request" name="Test Request" id="a8549c3e-67e6-4865-a84b-dbba2c9a1d6c"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapServiceSoapBinding</con:interface><con:operation>doService</con:operation><con:request name="Test Request" id="cb70d2cf-21cd-4cf7-871b-9ad8edc17233"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.2.0.149:51080/xservices/XMLFileService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="xmlservice">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<xs:XMLFileService>
+			<xs:in0>
+				<![CDATA[
+				        
+<?xml version="1.0" encoding="GBK"?> 
+<listbex> 
+  <bex funcId='65050011'>
+     <EVA_ID>2303</EVA_ID>
+     <OBJ_TYPE>2</OBJ_TYPE>
+     <OBJ_ID>13423432345</OBJ_ID>
+     <IS_WORTH>1</IS_WORTH>
+  </bex> 
+</listbex>
+
+         
+			]]]]>><![CDATA[
+			</xs:in0>
+		</xs:XMLFileService>
+		<soap:doService xmlns:soap="http://soap.szkingdom.com/"/>
+	</soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="cc87a1b9-c3c1-43e5-97a2-eb76b7304d35"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:testSuite id="9b1c2c40-1f0a-438f-9f6f-724b5be30037" name="65050021"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="38320759-a567-497d-85c7-c98042480b1a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="资讯产品查询接口（资讯类产品）" searchProperties="true"><con:settings/><con:testStep type="request" name="Test Request" id="21bd5899-5c90-47b0-bcae-f0cf7802481f"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapServiceSoapBinding</con:interface><con:operation>doService</con:operation><con:request name="Test Request" id="2539ae1e-944b-4c8e-b31f-b985a90c7441"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8090/xservices/XMLFileService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="xmlservice">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<xs:XMLFileService>
+			<xs:in0><![CDATA[
+				
+				        
+<?xml version="1.0" encoding="GBK"?> 
+<listbex> 
+  <bex funcId='65050021'>
+     <PRO_TYPE>3</PRO_TYPE>
+     <CUST_CODE>guest</CUST_CODE>
+     <GRANT_KEY>f936e1520d6a6856561462e05308874a</GRANT_KEY>
+  </bex> 
+</listbex>
+
+         
+			
+			]]]]>><![CDATA[</xs:in0>
+		</xs:XMLFileService>
+		<soap:doService xmlns:soap="http://soap.szkingdom.com/"/>
+	</soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="14b09f81-3833-4109-8371-6ba54006b2d5"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:testSuite id="214cfb62-18fd-48ff-8c80-c3a864367a7e" name="65050018"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="f547e503-22d9-49d7-8e71-f258fa57fc16" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="产品投资报告查询(51)" searchProperties="true"><con:settings/><con:testStep type="request" name="Test Request" id="9141dfbf-47f7-4e99-97d8-df71d5874527"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapServiceSoapBinding</con:interface><con:operation>doService</con:operation><con:request name="Test Request" id="29d89051-7b0c-4e12-91e1-51177f147640"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.201.138:8080/xservices/XMLFileService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="xmlservice">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<xs:XMLFileService>
+			<xs:in0><![CDATA[
+				
+				        
+<?xml version="1.0" encoding="GBK"?> 
+<listbex> 
+  <bex funcId='65050018'> 
+     <pro_id>10779</pro_id> 
+     <not_type>51</not_type> 
+     <currentpage>1</currentpage> 
+     <pagecount>1</pagecount> 
+  </bex> 
+</listbex>
+         
+			
+			]]]]>><![CDATA[</xs:in0>
+		</xs:XMLFileService>
+		<soap:doService xmlns:soap="http://soap.szkingdom.com/"/>
+	</soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="8eed5515-fc5c-48d5-bb05-ada52dabecaf"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="65d11204-c9d4-42e7-9f27-fe24ffbdf4f1" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="产品投资报告查询(50)" searchProperties="true"><con:settings/><con:testStep type="request" name="Test Request" id="76b030bd-cc64-44bb-afe1-0b586e37a6d9"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapServiceSoapBinding</con:interface><con:operation>doService</con:operation><con:request name="Test Request" id="181c83cf-81a5-46ed-a98b-7edef6970827"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.2.0.149:51080/xservices/XMLFileService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="xmlservice">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<xs:XMLFileService>
+			<xs:in0><![CDATA[
+				
+				        
+<?xml version="1.0" encoding="GBK"?> 
+<listbex> 
+  <bex funcId='65050018'> 
+     <pro_id>2662</pro_id> 
+     <not_type>50</not_type> 
+     <currentpage>1</currentpage> 
+     <pagecount>1</pagecount> 
+  </bex> 
+</listbex>
+         
+			
+			]]]]>><![CDATA[</xs:in0>
+		</xs:XMLFileService>
+		<soap:doService xmlns:soap="http://soap.szkingdom.com/"/>
+	</soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="4682d434-1414-4d4a-9367-9c794f905459"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:testSuite id="a659899c-d52e-43e2-ac7c-bfd96d4e411f" name="65050019"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="6c522017-12f3-4880-9ede-dacd93255c8e" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="产品限额接口(个人)" searchProperties="true"><con:settings/><con:testStep type="request" name="Test Request" id="bf1dc4cd-c7f4-4b4b-af0c-7beb02c801a1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapServiceSoapBinding</con:interface><con:operation>doService</con:operation><con:request name="Test Request" id="c9ffbbb9-95bd-4762-accb-1bdf6c729e46"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.2.0.149:51080/xservices/XMLFileService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="xmlservice">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<xs:XMLFileService>
+			<xs:in0><![CDATA[
+				
+				        
+<?xml version="1.0" encoding="GBK"?> 
+<listbex> 
+  <bex funcId='65050019'> 
+     <pro_id>764069</pro_id> 
+     <user_type>0</user_type>
+     <currentpage>1</currentpage> 
+     <pagecount>1</pagecount> 
+  </bex> 
+</listbex>
+         
+			
+			]]]]>><![CDATA[</xs:in0>
+		</xs:XMLFileService>
+		<soap:doService xmlns:soap="http://soap.szkingdom.com/"/>
+	</soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="351b1a2c-cbbe-426d-8055-2dd8e33847f3"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="af7016e6-4e5b-44ef-9521-f60c75502bfa" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="产品限额接口(机构)" searchProperties="true"><con:settings/><con:testStep type="request" name="Test Request" id="dc045a45-0d75-45cd-aa0f-739cef8f6480"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapServiceSoapBinding</con:interface><con:operation>doService</con:operation><con:request name="Test Request" id="e07a2ac0-c9b4-4888-8a12-e197c3a9c291"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.2.0.149:51080/xservices/XMLFileService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="xmlservice">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<xs:XMLFileService>
+			<xs:in0><![CDATA[
+				
+				        
+<?xml version="1.0" encoding="GBK"?> 
+<listbex> 
+  <bex funcId='65050019'> 
+     <pro_id>764069</pro_id> 
+     <user_type>1</user_type>
+     <currentpage>1</currentpage> 
+     <pagecount>1</pagecount> 
+  </bex> 
+</listbex>
+         
+			
+			]]]]>><![CDATA[</xs:in0>
+		</xs:XMLFileService>
+		<soap:doService xmlns:soap="http://soap.szkingdom.com/"/>
+	</soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="0def8832-2955-4bf3-8890-c64084d921a4"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="025de208-e140-410b-bc9c-0cb7f2a6ac64" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="产品限额接口(设备)" searchProperties="true"><con:settings/><con:testStep type="request" name="Test Request" id="624a13bc-e4f6-4996-867f-8f0d61387b49"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapServiceSoapBinding</con:interface><con:operation>doService</con:operation><con:request name="Test Request" id="328a3980-78e3-495a-a2a2-ec82fe5a6a3b"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.2.0.149:51080/xservices/XMLFileService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="xmlservice">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<xs:XMLFileService>
+			<xs:in0><![CDATA[
+				
+				        
+<?xml version="1.0" encoding="GBK"?> 
+<listbex> 
+  <bex funcId='65050019'> 
+     <pro_id>764069</pro_id> 
+     <user_type>2</user_type>
+     <currentpage>1</currentpage> 
+     <pagecount>1</pagecount> 
+  </bex> 
+</listbex>
+         
+			
+			]]]]>><![CDATA[</xs:in0>
+		</xs:XMLFileService>
+		<soap:doService xmlns:soap="http://soap.szkingdom.com/"/>
+	</soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="a8f71d67-4421-4dd9-81d0-f0e789b38441"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:testSuite id="41d8a78c-024e-405b-a0cd-2cc34396e069" name="65050022"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="0a27b041-77e9-4097-ba43-c6eec569a6e2" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="供应商资讯维护接口(新增)" searchProperties="true"><con:settings/><con:testStep type="request" name="Test Request" id="ae021d09-ce35-4ec3-a5b9-e80d375ad222"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapServiceSoapBinding</con:interface><con:operation>doService</con:operation><con:request name="Test Request" id="fdb434f2-8053-40b6-8001-c80cb85c8f10"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.2.0.149:51080/xservices/XMLFileService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="xmlservice">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<xs:XMLFileService>
+			<xs:in0><![CDATA[
+				
+<?xml version="1.0" encoding="GBK"?>
+<listbex> 
+  <bex funcId='710533'>
+    <pro_id></pro_id>
+    <pro_code></pro_code>
+    <sno>86261</sno>
+    <sup_id>4222640</sup_id>
+    <goods_id>YJ00050</goods_id>
+    <status></status>
+    <begin_date></begin_date>
+    <end_date></end_date> 
+	<oper_flag>A</oper_flag> 
+  </bex>
+</listbex>
+			
+			]]]]>><![CDATA[</xs:in0>
+		</xs:XMLFileService>
+		<soap:doService xmlns:soap="http://soap.szkingdom.com/"/>
+	</soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="5892e882-2707-4d59-9d2d-775b9e97937f"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="20235eb6-e971-4947-838c-61b21835d912" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="供应商资讯维护接口(修改)" searchProperties="true"><con:settings/><con:testStep type="request" name="Test Request" id="af8c71d8-5213-42b3-b825-5cb326f3aca6"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapServiceSoapBinding</con:interface><con:operation>doService</con:operation><con:request name="Test Request" id="80612de6-8dfa-4ef5-a83d-3a54fec7406a"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.2.0.149:51080/xservices/XMLFileService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="xmlservice">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<xs:XMLFileService>
+			<xs:in0><![CDATA[
+				
+				        
+<?xml version="1.0" encoding="GBK"?>
+     <listbex><bex funcId='65050005'>
+         <info_type>1</info_type>
+         <info_cont>该产品为推送服务类产品，将以短信形式对订阅高手的实盘调仓动态进行推送。</info_cont>
+         <Ann_Auther></Ann_Auther>
+         <Ann_Comm>AXYXFWZX</Ann_Comm>
+         <info_title>TEST0504的实盘调仓推送（短信版）</info_title>
+         <sup_licensekey></sup_licensekey>
+         <Ann_Date></Ann_Date>
+         <Ann_Name></Ann_Name>
+         <rel_stock></rel_stock>
+         <goods_id>SPS100898233</goods_id>
+         <Ann_Type></Ann_Type>
+         <Ann_Path></Ann_Path>
+         <rel_market></rel_market>
+         <sup_id>422264</sup_id>
+         <rel_industry></rel_industry><rel_stock_name></rel_stock_name>
+         <info_id>20180731160907758</info_id>
+        
+         <info_name>TEST0504的实盘调仓推送（短信版）</info_name>
+         <info_date>20180731</info_date></bex></listbex> 
+         
+			
+			]]]]>><![CDATA[</xs:in0>
+		</xs:XMLFileService>
+		<soap:doService xmlns:soap="http://soap.szkingdom.com/"/>
+	</soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="b54909d4-40e7-41bc-9855-e1904d37197f"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="944a4ddf-c271-45d9-a574-5dc8570ee594" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="供应商资讯维护接口(删除)" searchProperties="true"><con:settings/><con:testStep type="request" name="Test Request" id="ac39dd42-b973-4936-9d02-20b743d58932"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapServiceSoapBinding</con:interface><con:operation>doService</con:operation><con:request name="Test Request" id="9125b5ff-d0d3-4b3a-8260-734109f5af44"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.2.0.149:51080/xservices/XMLFileService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="xmlservice">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<xs:XMLFileService>
+			<xs:in0><![CDATA[
+				
+				        
+<?xml version="1.0" encoding="GBK"?> 
+<listbex> 
+  <bex funcId='65050022'>
+     <sup_id>422264</sup_id>
+     <goods_id>654321</goods_id>
+     <goods_name>test</goods_name>
+     <goods_flag>0</goods_flag>
+     <oper_flag>D</oper_flag>
+  </bex> 
+</listbex>
+
+         
+			
+			]]]]>><![CDATA[</xs:in0>
+		</xs:XMLFileService>
+		<soap:doService xmlns:soap="http://soap.szkingdom.com/"/>
+	</soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="44a1f743-86ba-44b9-a88b-b18bdfe4072e"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:testSuite id="9dac38ac-5026-4674-a2fa-d5d43acc2a4b" name="65050023"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="99ad22bf-6d04-4ef3-8cb7-8038aaee17a8" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="资讯产品关系管理接口（新增）" searchProperties="true"><con:settings/><con:testStep type="request" name="Test Request" id="9285b118-c53e-4dcb-a2d3-fbbb0b4bcf09"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapServiceSoapBinding</con:interface><con:operation>doService</con:operation><con:request name="Test Request" id="d69fa697-1e34-4c51-8eb5-c17781e58a0b"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.2.0.149:51080/xservices/XMLFileService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="xmlservice">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<xs:XMLFileService>
+			<xs:in0><![CDATA[
+				
+				        
+<?xml version="1.0" encoding="GBK"?> 
+<listbex> 
+  <bex funcId='65050001'>
+  </bex> 
+</listbex>
+         
+			
+			]]]]>><![CDATA[</xs:in0>
+		</xs:XMLFileService>
+		<soap:doService xmlns:soap="http://soap.szkingdom.com/"/>
+	</soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="ffe599c7-7135-45ca-b720-07012efddf4b"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="00f64bdf-ee50-4d97-82d8-1969a61fece8" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="资讯产品关系管理接口（修改）" searchProperties="true"><con:settings/><con:testStep type="request" name="Test Request" id="b9cd44b5-3af5-4a49-ab3f-6338491631df"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapServiceSoapBinding</con:interface><con:operation>doService</con:operation><con:request name="Test Request" id="4fec86a6-30ef-41d3-8cc1-9121f4eddc4d"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.2.0.149:51080/xservices/XMLFileService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="xmlservice">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<xs:XMLFileService>
+			<xs:in0><![CDATA[
+				
+				        
+<?xml version="1.0" encoding="GBK"?> 
+<listbex> 
+  <bex funcId='65050023'>
+     <pro_id>764251</pro_id>
+     <sup_id>123456</sup_id>
+     <goods_id>654321</goods_id>
+     <status>0</status>
+     <oper_flag>U</oper_flag>
+  </bex> 
+</listbex>
+         
+			
+			]]]]>><![CDATA[</xs:in0>
+		</xs:XMLFileService>
+		<soap:doService xmlns:soap="http://soap.szkingdom.com/"/>
+	</soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="b9cf064d-c2af-41db-a130-34b5a283db21"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="3dc21cae-3e01-423d-90d0-cfa289aac386" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="资讯产品关系管理接口（删除）" searchProperties="true"><con:settings/><con:testStep type="request" name="Test Request" id="bbe956b1-69f0-4f9e-a095-a4f8ff877fe9"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapServiceSoapBinding</con:interface><con:operation>doService</con:operation><con:request name="Test Request" id="3fad2048-b4f9-4787-9c08-767485b07588"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.2.0.149:51080/xservices/XMLFileService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="xmlservice">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<xs:XMLFileService>
+			<xs:in0><![CDATA[
+				
+				        
+<?xml version="1.0" encoding="GBK"?> 
+<listbex> 
+  <bex funcId='65050023'>
+     <pro_id>764251</pro_id>
+     <sup_id>123456</sup_id>
+     <goods_id>654321</goods_id>
+     <status>0</status>
+     <oper_flag>D</oper_flag>
+  </bex> 
+</listbex>
+         
+			
+			]]]]>><![CDATA[</xs:in0>
+		</xs:XMLFileService>
+		<soap:doService xmlns:soap="http://soap.szkingdom.com/"/>
+	</soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="632179f0-99e0-4b0b-824e-a7481bd3d5c1"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:testSuite id="b8e453fc-0888-44ce-b9a6-98d0b0277d35" name="GeneralPojoService'"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="9f032dba-4e84-487f-8d62-03ab0afd6a29" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="request" name="Test Request" id="73d16efa-a035-457d-b46f-38a34b140eb0"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapServiceSoapBinding</con:interface><con:operation>doService</con:operation><con:request name="Test Request" id="645b0679-809c-4d63-8265-1f573302b014"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.2.0.149:51080/xservices/XMLFileService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="xmlservice">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<xs:XMLFileService>
+			<xs:in0><![CDATA[
+				
+				        
+<?xml version="1.0" encoding="GBK"?> 
+<listbex> 
+     <bex funcId='GeneralPojoService'>
+     <bex_codes>UserPdUpdate</bex_codes>
+     <USER_CODE>483738</USER_CODE>
+     <TRD_PWD>111111y</TRD_PWD>
+     <NEW_PWD>654321</NEW_PWD>
+     <CFM_PWD>654321</CFM_PWD>
+  </bex> 
+</listbex>
+         
+			
+			]]]]>><![CDATA[</xs:in0>
+		</xs:XMLFileService>
+		<soap:doService xmlns:soap="http://soap.szkingdom.com/"/>
+	</soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="7883afc6-36e5-4c70-a954-e82cd65fd5c8"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:testSuite id="58eaf733-d0f3-4dd8-a5e3-9d222949f888" name="12"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:properties/><con:reportParameters/></con:testSuite><con:mockService id="1a002ab0-7aaf-40e5-8b05-caa4a89bf33e" port="8080" path="/" host="PC-20180328DNIZ" name="MockService 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="doService" id="e59cc91a-dc58-4fcd-b9f3-2414f05eef7a" interface="SoapServiceSoapBinding" operation="doService"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="3302bb98-8521-4083-8712-ec595ddd2985" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<wsdl:definitions name="SoapService" targetNamespace="http://soap.szkingdom.com/" xmlns:ns1="http://cxf.apache.org/bindings/xformat" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soap.szkingdom.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <wsdl:types>
+      <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://soap.szkingdom.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+         <xs:element name="doService" type="tns:doService"/>
+         <xs:element name="doServiceResponse" type="tns:doServiceResponse"/>
+         <xs:complexType name="doService">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="requestXml" type="xs:string"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="doServiceResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
+   </wsdl:types>
+   <wsdl:message name="doServiceResponse">
+      <wsdl:part element="tns:doServiceResponse" name="parameters"></wsdl:part>
+   </wsdl:message>
+   <wsdl:message name="doService">
+      <wsdl:part element="tns:doService" name="parameters"></wsdl:part>
+   </wsdl:message>
+   <wsdl:portType name="ISoapService">
+      <wsdl:operation name="doService">
+         <wsdl:input message="tns:doService" name="doService"></wsdl:input>
+         <wsdl:output message="tns:doServiceResponse" name="doServiceResponse"></wsdl:output>
+      </wsdl:operation>
+   </wsdl:portType>
+   <wsdl:binding name="SoapServiceSoapBinding" type="tns:ISoapService">
+      <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+      <wsdl:operation name="doService">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="doService">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="doServiceResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:service name="SoapService">
+      <wsdl:port binding="tns:SoapServiceSoapBinding" name="SoapServiceHttpPort">
+         <soap:address location="http://127.0.0.1:8080/services/SoapService"/>
+      </wsdl:port>
+   </wsdl:service>
+</wsdl:definitions>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soap.szkingdom.com/ISoapService/doServiceResponse"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:requirements/><con:properties/><con:wssContainer/><con:databaseConnectionContainer><con:databaseConnection><con:name>自行车上的背影</con:name><con:driver>oracle.jdbc.driver.OracleDriver</con:driver><con:connectionString>jdbc:oracle:thin:kdpif/PASS_VALUE@10.2.96.138:1521:PIF6TEST</con:connectionString><con:password>kdpif</con:password></con:databaseConnection></con:databaseConnectionContainer><con:oAuth2ProfileContainer/><con:reporting><con:xmlTemplates/><con:parameters/></con:reporting><con:sensitiveInformation/></con:soapui-project>
